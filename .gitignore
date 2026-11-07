@@ -1,0 +1,26 @@
+# WeChat Mini Program
+node_modules/
+miniprogram_npm/
+project.private.config.json
+
+# Keil MDK build outputs
+Objects/
+Listings/
+*.uvguix.*
+*.uvoptx
+*.axf
+*.elf
+*.o
+*.d
+*.map
+*.hex
+*.bin
+
+# IDE temporary files
+.vscode/
+.idea/
+
+# System temporary files
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,75 @@
+<view class="container">
+  <!-- 操作按钮 -->
+  <view class="header">
+    <button class="btn scan-btn" bindtap="scanDevices" hover-class="btn-hover">
+      <image src="/images/bluetooth.png" class="btn-icon" />搜索设备
+    </button>
+    <view class="status-box">
+      <text class="status-text">状态：{{connected ? '已连接' : '未连接'}}</text>
+      <text class="device-name" wx:if="{{connected}}">{{currentDeviceName}}</text>
+    </view>
+    <button class="btn disconnect-btn" bindtap="disconnect" hover-class="btn-hover" disabled="{{!connected}}">
+      断开连接
+    </button>
+  </view>
+
+  <!-- 图表展示 -->
+  <view class="charts-container">
+    <!-- Pitch图表在前 -->
+    <view class="chart-box">
+      <ec-canvas id="pitch-chart" canvas-id="pitch" ec="{{ecPitch}}"></ec-canvas>
+      <view class="chart-label">
+        <image src="/images/Power.png" class="chart-icon" />
+        <text>拉力曲线</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据显示框 -->
+  <view class="data-box">
+    <text class="data-label">当前力量数据：</text>
+    <text class="data-value">{{currentVal}}</text> <!-- 绑定动态数据 -->
+  </view>
+
+  <!-- 新增的重力数据框 -->
+  <view class="data-box">
+    <text class="data-label">当前重力数据(N)：</text>
+    <text class="data-value">{{currentGravity}}</text> <!-- 绑定动态数据 -->
+  </view>
+
+  <!-- 设备列表弹窗 -->
+  <view class="mask" wx:if="{{showDeviceList}}" bindtap="closeDeviceList"></view>
+  <view class="device-dialog" wx:if="{{showDeviceList}}">
+    <view class="dialog-header">
+      <text>选择蓝牙设备</text>
+      <image src="/images/close.png" class="close-icon" bindtap="closeDeviceList" />
+    </view>
+    <scroll-view class="device-list" scroll-y>
+      <block wx:for="{{devices}}" wx:key="deviceId">
+        <view 
+          class="device-item {{activeDevice === item.deviceId ? 'active' : ''}}"
+          bindtap="connectDevice" 
+          data-id="{{item.deviceId}}"
+        >
+          <image src="/images/sensor.png" class="device-icon" />
+          <view class="device-info">
+            <text class="device-name">{{item.name || '未知设备'}}</text>
+            <view class="signal-info">
+              <view class="signal-bars">
+                <view class="bar {{item.RSSI > -60 ? 'active' : ''}}"></view>
+                <view class="bar {{item.RSSI > -70 ? 'active' : ''}}"></view>
+                <view class="bar {{item.RSSI > -80 ? 'active' : ''}}"></view>
+              </view>
+              <text class="rssi">{{item.RSSI}}dBm</text>
+            </view>
+          </view>
+          <text class="connect-status">{{activeDevice === item.deviceId ? '已连接' : '未连接'}}</text>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="scanning-tip" wx:if="{{scanning}}">
+      <image src="/images/loading.gif" class="loading-icon" />
+      <text>正在搜索设备...</text>
+    </view>
+  </view>
+</view>

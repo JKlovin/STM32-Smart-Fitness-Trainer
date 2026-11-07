@@ -1,0 +1,236 @@
+/* 基础样式 */
+page {
+  background: #f5f6fa;
+  height: 100%;
+}
+
+/* 容器使用 flex 布局 */
+.container {
+  display: flex;
+  flex-direction: column; /* 竖向排列 */
+  height: 60%;
+  padding: 20rpx;
+}
+
+/* 头部操作区 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  background: #fff; /* 保持白色背景 */
+  padding: 20rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 按钮样式 */
+.btn {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 28rpx;
+  border-radius: 40rpx;
+  padding: 0 30rpx;
+  transition: all 0.3s;
+}
+
+.scan-btn {
+  background: #409EFF;
+  color: white;
+}
+
+.disconnect-btn {
+  background: #ff4444;
+  color: white;
+}
+
+.btn-hover {
+  opacity: 0.8;
+}
+
+.btn-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* 状态显示 */
+.status-box {
+  text-align: center;
+}
+
+.status-text {
+  color: #666;
+  font-size: 26rpx;
+}
+
+.device-name {
+  color: #409EFF;
+  font-size: 24rpx;
+}
+
+/* 图表容器 */
+.charts-container {
+  background: #fff; /* 图表背景为白色 */
+  border-radius: 16rpx;
+  padding: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+  flex-grow: 1; /* 让容器填满剩余空间 */
+}
+
+/* 每个图表的样式 */
+.chart-box {
+  height: 500rpx; /* 可以根据需要调整高度 */
+  margin-bottom: 40rpx;
+}
+
+.chart-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.chart-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+/* 数据显示框 */
+.data-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-top: 20rpx; /* 设置间距 */
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  justify-content: space-between;  /* 使文字和数据值分开 */
+  align-items: center;  /* 使文字和数据值垂直居中对齐 */
+}
+
+.data-label {
+  font-size: 28rpx;
+  color: #333;
+  margin-right: 10rpx; /* 给文字和数值之间增加间距 */
+}
+
+.data-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #409EFF;
+}
+
+/* 设备弹窗 */
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.device-dialog {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 32rpx 32rpx 0 0;
+  z-index: 1000;
+  padding: 30rpx;
+  max-height: 70vh;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 34rpx;
+  margin-bottom: 30rpx;
+}
+
+.close-icon {
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx;
+}
+
+.device-list {
+  max-height: 60vh;
+}
+
+.device-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  margin: 10rpx 0;
+  border-radius: 16rpx;
+  background: #f8f9ff;
+}
+
+.device-item.active {
+  background: #e6f3ff;
+}
+
+.device-icon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.device-info {
+  flex: 1;
+}
+
+.signal-info {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.signal-bars {
+  display: flex;
+  align-items: flex-end;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.bar {
+  width: 10rpx;
+  margin-right: 4rpx;
+  background: #ddd;
+}
+
+.bar:nth-child(1) { height: 10rpx; }
+.bar:nth-child(2) { height: 15rpx; }
+.bar:nth-child(3) { height: 20rpx; }
+.bar.active { background: #409EFF; }
+
+.rssi {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.connect-status {
+  color: #409EFF;
+  font-size: 26rpx;
+}
+
+.scanning-tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30rpx;
+}
+
+.loading-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}

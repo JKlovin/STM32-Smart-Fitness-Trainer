@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "智能拉力器",
+  "requiredBackgroundModes": ["bluetooth"],
+  "permission": {
+    "scope.bluetooth": {
+      "desc": "需要您授权使用蓝牙功能"
+    },
+    "scope.userLocation": {
+      "desc": "需要您授权地理位置以使用蓝牙功能"
+    }
+  }
+}
