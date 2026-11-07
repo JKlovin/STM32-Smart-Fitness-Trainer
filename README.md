@@ -24,7 +24,7 @@
 
 ## 🎬 项目演示
 
-[▶ 点击观看项目演示视频（演示视频.mp4）](./演示视频.mp4)
+https://github.com/user-attachments/assets/b8e3be15-2185-4d96-9d1e-883a80368c0f
 
 <!-- 若希望视频在 GitHub README 页面内直接播放：请在 GitHub 网页编辑 README，拖入本地 MP4 获取 https://github.com/user-attachments/assets/... 地址，再将该完整地址单独放在本段下一行，前后留空行。不要直接用仓库 raw MP4 路径充当嵌入播放器。 -->
 
